@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.mymod.i_dont_care_music_disc.desc"
+  },
+  "length_in_seconds": 98.0,
+  "sound_event": "mymod:i_dont_care"
+}

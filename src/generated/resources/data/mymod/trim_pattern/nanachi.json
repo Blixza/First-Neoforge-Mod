@@ -1,0 +1,8 @@
+{
+  "asset_id": "mymod:nanachi",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.mymod.nanachi"
+  },
+  "template_item": "mymod:nanachi_armor_trim_smithing_template"
+}

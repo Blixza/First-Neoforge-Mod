@@ -1,0 +1,12 @@
+// 1.21	2025-08-21T21:47:31.502825	Tags for minecraft:item mod id mymod
+e5cf8d49678838f7ea08e7f6896af0b82f90370e data/minecraft/tags/item/axes.json
+40ed4bdd698391eb6ebed14fa70794dca74b3fcb data/minecraft/tags/item/hoes.json
+d654d044d09303439212edd751f57614d7a974f3 data/minecraft/tags/item/logs_that_burn.json
+362dc7be58e6aa6294a4fe072141b1fa550774b3 data/minecraft/tags/item/pickaxes.json
+7fe57196a923e3346d60a718123dab6b0f8230c6 data/minecraft/tags/item/planks.json
+59ff93a9f16e36802e3edbcabca535668163f3b6 data/minecraft/tags/item/shovels.json
+2cafe0f43349cf8e8d803c4aa1c7bc2a0d8e9cd5 data/minecraft/tags/item/swords.json
+609579bcae4530651d87ced64a2a2aa3925cb103 data/minecraft/tags/item/trimmable_armor.json
+dc28ca0a9da98655ec9489b2310ccc0c79ddae42 data/minecraft/tags/item/trim_materials.json
+257d89ebd8499eed31139de62bc94b807034559c data/minecraft/tags/item/trim_templates.json
+e4a79f592b9421fe912e850274fac49aceff149a data/mymod/tags/item/transformable_items.json

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "mymod:block/bismuth_pressure_plate"
+    },
+    "powered=true": {
+      "model": "mymod:block/bismuth_pressure_plate_down"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "values": {
+    "mymod:radish": {
+      "chance": 0.25
+    },
+    "mymod:radish_seeds": {
+      "chance": 0.15
+    }
+  }
+}

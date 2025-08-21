@@ -1,0 +1,6 @@
+{
+  "parent": "mymod:item/nanachi_bow",
+  "textures": {
+    "layer0": "mymod:item/nanachi_bow_pulling_0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "item.mymod.bismuth": "Bismuth",
+  "item.mymod.raw_bismuth": "Raw Bismuth",
+  "item.mymod.chisel": "Chisel",
+  "item.mymod.red_eye": "Red Eye",
+  "item.mymod.i_dont_care_music_disc": "I Don't Care Music Disc",
+  "item.mymod.i_dont_care_music_disc.desc": "Ramones - I Don't Care",
+  "item.mymod.chery_tiggo_music_disc": "Chery Tiggo Music Disc",
+  "item.mymod.chery_tiggo_music_disc.desc": "deathmarried - Chery Tiggo",
+  "block.mymod.bismuth_block": "Block of bismuth",
+  "block.mymod.bismuth_ore": "Bismuth ore",
+  "block.mymod.bismuth_deepslate_ore": "Bismuth deepslate ore",
+  "tooltip.mymod.magic_block.tooltip": "This is a §9MAGICAL§r block",
+  "tooltip.mymod.chisel.shift_down": "§eSossu...§r",
+  "tooltip.mymod.chisel": "Hold shift",
+  "tooltip.mymod.chisel.last_changed_block": "Last block changed at ",
+  "trim_pattern.mymod.nanachi": "Nanachi Armor Trim",
+  "trim_material.mymod.bismuth": "Bismuth Material"
+}

@@ -1,0 +1,69 @@
+{
+  "chisel_use": {
+    "subtitle": "sounds.mymod.chisel_use",
+    "sounds": [
+      "mymod:chisel_use"
+    ]
+  },
+  "magic_block_break": {
+    "subtitle": "sounds.mymod.magic_block_break",
+    "sounds": [
+      "mymod:magic_block_break"
+    ]
+  },
+  "magic_block_step": {
+    "subtitle": "sounds.mymod.magic_block_step",
+    "sounds": [
+      "mymod:magic_block_step"
+    ]
+  },
+  "magic_block_place": {
+    "subtitle": "sounds.mymod.magic_block_place",
+    "sounds": [
+      "mymod:magic_block_place"
+    ]
+  },
+  "magic_block_hit": {
+    "subtitle": "sounds.mymod.magic_block_hit",
+    "sounds": [
+      "mymod:magic_block_hit"
+    ]
+  },
+  "magic_block_fall": {
+    "subtitle": "sounds.mymod.magic_block_fall",
+    "sounds": [
+      "mymod:magic_block_fall"
+    ]
+  },
+  "i_dont_care": {
+    "sounds": [
+      {
+        "name": "mymod:i_dont_care",
+        "stream": true
+      }
+    ]
+  },
+  "chery_tiggo": {
+    "sounds": [
+      {
+        "name": "mymod:chery_tiggo",
+        "stream": true
+      }
+    ]
+  },
+  "nanachi_sound": {
+    "sounds": [
+      "mymod:nanachi_sound"
+    ]
+  },
+  "nanachi_bad": {
+    "sounds": [
+      "mymod:nanachi_bad"
+    ]
+  },
+  "nanachi_riko": {
+    "sounds": [
+      "mymod:nanachi_riko"
+    ]
+  }
+}

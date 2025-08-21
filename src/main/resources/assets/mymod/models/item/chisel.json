@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mymod:item/chisel"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "mymod:used": 1
+      },
+      "model": "mymod:item/chisel_used"
+    }
+  ]
+}
