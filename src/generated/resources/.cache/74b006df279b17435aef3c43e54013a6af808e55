@@ -1,4 +1,4 @@
-// 1.21	2025-08-21T21:47:31.5048256	Block States: mymod
+// 1.21	2025-08-24T17:13:41.7432864	Block States: mymod
 4cd05c1d738c627af54163706dc3c7f76ca5e049 assets/mymod/blockstates/bismuth_block.json
 437f476bd9263cb9e3b2ffd4c91c669a2ed0dfa6 assets/mymod/blockstates/bismuth_button.json
 a563672061b00588ba91f8db10c22a08001384e2 assets/mymod/blockstates/bismuth_deepslate_ore.json
@@ -20,6 +20,7 @@ b6c2f9a40b8f738f39c8c6a6567885f68bdcc7f1 assets/mymod/blockstates/bismuth_trapdo
 9b1b0c7fb0c3e250a7bca6ab475c280312d88beb assets/mymod/blockstates/bloodwood_sapling.json
 3bcff031b77340e0ae89f1d36f139c655ec41698 assets/mymod/blockstates/bloodwood_wood.json
 e837f6260e6fad43b8ab640100a2fe6741ef10da assets/mymod/blockstates/goji_berry_bush.json
+1d9a5d02de7afb9335e50cd4e36e09217d3166eb assets/mymod/blockstates/growth_chamber.json
 a4f1c74f6c14c20173d229ea0ddd2416ef69d274 assets/mymod/blockstates/magic_block.json
 22b7faa1df0743cc1ef5d6451be6d1ec94d30b7b assets/mymod/blockstates/radish_crop.json
 13fcf7114a0e8c43fbc17f5ebb52b83bfa189a89 assets/mymod/blockstates/stripped_bloodwood_log.json
@@ -71,6 +72,7 @@ da2a06d1485e94868209be8696255a628aae13ac assets/mymod/models/block/goji_berry_bu
 c72c1a8f71d11174b1a84eb90070c604ce5b5766 assets/mymod/models/block/goji_berry_bush_stage1.json
 bdf605b4c815959dc3c51ed269e7b0126541b77f assets/mymod/models/block/goji_berry_bush_stage2.json
 1aa68fbc3e0e624684c60419d19cd0884880d13a assets/mymod/models/block/goji_berry_bush_stage3.json
+acc4ed3cb6792db5428b18a9b047fa3a14962f1d assets/mymod/models/block/growth_chamber.json
 a3177a97c8a3b1d001c1ea90a5db202dbc2d1293 assets/mymod/models/block/magic_block.json
 4adf721c1f57d1d33cb38a8ecc15a6714917d507 assets/mymod/models/block/radish_crop_stage0.json
 4282d857093d721ff463c0b6af0febac42086385 assets/mymod/models/block/radish_crop_stage1.json
@@ -95,6 +97,7 @@ aff71d905a9bab8b22ebd1856414f04043d89b69 assets/mymod/models/item/bismuth_stairs
 0df54032f42f613c93137e967107831edae0128a assets/mymod/models/item/bloodwood_log.json
 100e6496d0c19a01f16af96cb14067a710e48283 assets/mymod/models/item/bloodwood_planks.json
 6182c179fd7a27f9adc7bf2da6d8271f4b3950f3 assets/mymod/models/item/bloodwood_wood.json
+6a7880c297f9f30406bfd426752a3d633f17a265 assets/mymod/models/item/growth_chamber.json
 912cb3b6437db4ad075eb15a1623ad3a1208e55f assets/mymod/models/item/magic_block.json
 14b4508f1c4321baef3878aa26afe9bd77d7b4c4 assets/mymod/models/item/stripped_bloodwood_log.json
 e3a5f864438e7dac0f33153bd8ac15d6eee31aac assets/mymod/models/item/stripped_bloodwood_wood.json

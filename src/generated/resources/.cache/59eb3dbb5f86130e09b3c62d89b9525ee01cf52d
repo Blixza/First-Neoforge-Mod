@@ -1,4 +1,4 @@
-// 1.21	2025-08-21T21:47:31.4988237	Loot Tables
+// 1.21	2025-08-24T17:13:41.7402883	Loot Tables
 19ba7b3d817c26e17acb72246507f6ae52027d35 data/mymod/loot_table/blocks/bismuth_block.json
 d7842afb6b7396094e494fa2f2e1ce36b7c3fe85 data/mymod/loot_table/blocks/bismuth_button.json
 ca9efc21a3aa7d21ef4fe507c5fb076f741d43aa data/mymod/loot_table/blocks/bismuth_deepslate_ore.json
@@ -19,7 +19,10 @@ e2eafbae4817d27d8eb0d2ce3e7c010305dd6f20 data/mymod/loot_table/blocks/bloodwood_
 eaab07d2154154c2727d6aae19f6bbf96861dbe1 data/mymod/loot_table/blocks/bloodwood_planks.json
 cb0ec1b8bacd18361473e52618124891181b4789 data/mymod/loot_table/blocks/bloodwood_sapling.json
 9aa106399dfb00dbc9f05ba24b6460573d15a293 data/mymod/loot_table/blocks/bloodwood_wood.json
+d527b0cad7c10163f97a570a2fa4b98f7dca2eae data/mymod/loot_table/blocks/chair.json
 7ad29309e45ca3de1662c62532dee9b8ac73b978 data/mymod/loot_table/blocks/goji_berry_bush.json
+73187b79bd2659c03885f16552e737a0555429f0 data/mymod/loot_table/blocks/growth_chamber.json
+2406a1e546b453e4b9173099a06214818d374307 data/mymod/loot_table/blocks/pedestal.json
 3ed7dcb4fa13e47fd6ea1c823e5af9f744ae3d1e data/mymod/loot_table/blocks/radish_crop.json
 c2a20b3803fc8de8a3aa5cb968deb35945ebb74a data/mymod/loot_table/blocks/stripped_bloodwood_log.json
 09dfc5b829bc8776a9c6213294106de6e7646d89 data/mymod/loot_table/blocks/stripped_bloodwood_wood.json

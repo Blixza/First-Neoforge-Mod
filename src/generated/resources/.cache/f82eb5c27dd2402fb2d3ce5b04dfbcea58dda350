@@ -1,0 +1,6 @@
+// 1.21	2025-08-23T23:38:27.6524146	Global Loot Modifiers : mymod
+e306109eb65da820c7daa9a8f64a7f1d47bdeb41 data/mymod/loot_modifiers/berry_from_creeper.json
+b593d02a4b962228ac99ff32e344a3a9ecb825b5 data/mymod/loot_modifiers/chisel_from_jungle_temple.json
+fe19913383f3296d1ffb29150663416c518e2166 data/mymod/loot_modifiers/radish_seeds_to_short_glass.json
+b3e3053f30fc4619e698e48394098611df557782 data/mymod/loot_modifiers/radish_seeds_to_tall_glass.json
+6ce20755166b1726822d8d903c9023e4d93a960d data/neoforge/loot_modifiers/global_loot_modifiers.json

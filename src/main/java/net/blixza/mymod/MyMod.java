@@ -1,17 +1,32 @@
 package net.blixza.mymod;
 
 import net.blixza.mymod.block.ModBlocks;
+import net.blixza.mymod.block.entity.ModBlockEntities;
+import net.blixza.mymod.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.blixza.mymod.component.ModDataComponents;
 import net.blixza.mymod.effect.ModEffects;
 import net.blixza.mymod.enchantment.ModEnchantmentEffects;
 import net.blixza.mymod.entity.ModEntities;
+import net.blixza.mymod.entity.client.ChairRenderer;
 import net.blixza.mymod.entity.client.GeckoRenderer;
+import net.blixza.mymod.entity.client.TomahawkProjectileRenderer;
 import net.blixza.mymod.item.ModCreativeModeTabs;
 import net.blixza.mymod.item.ModItems;
+import net.blixza.mymod.loot.ModLootModifiers;
+import net.blixza.mymod.particle.BismuthParticles;
+import net.blixza.mymod.particle.ModParticles;
 import net.blixza.mymod.potion.ModPotions;
+import net.blixza.mymod.screen.ModMenuTypes;
+import net.blixza.mymod.screen.custom.GrowthChamberScreen;
+import net.blixza.mymod.screen.custom.PedestalScreen;
 import net.blixza.mymod.sound.ModSounds;
 import net.blixza.mymod.util.ModItemProperties;
+import net.blixza.mymod.villager.ModVillagers;
+import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -49,9 +64,14 @@ public class MyMod {
         ModDataComponents.register(modEventBus);
         ModSounds.register(modEventBus);
         ModEffects.register(modEventBus);
-        ModPotions.registe(modEventBus);
+        ModPotions.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModVillagers.register(modEventBus);
+        ModParticles.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -77,6 +97,24 @@ public class MyMod {
             ModItemProperties.addCustomItemProperties();
 
             EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
+            EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
+            EntityRenderers.register(ModEntities.CHAIR_ENTITY.get(), ChairRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerParticleFactoreis(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(ModParticles.BISMUTH_PARTICLES.get(), BismuthParticles.Provider::new);
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
+            event.register(ModMenuTypes.GROWTH_CHAMBER_MENU.get(), GrowthChamberScreen::new);
         }
     }
 }

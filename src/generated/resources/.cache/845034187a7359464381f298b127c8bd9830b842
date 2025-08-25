@@ -1,4 +1,4 @@
-// 1.21	2025-08-21T23:21:50.9593974	Item Models: mymod
+// 1.21	2025-08-22T04:05:48.0632156	Item Models: mymod
 e4545cfc29abe12aee94943cdefcd47f2b1030f1 assets/mymod/models/item/bismuth.json
 d0508d541bfda5b06a7817ef208bd170a7b109ed assets/mymod/models/item/bismuth_axe.json
 940d5593b14c004a7cf8858a37cfae200c950547 assets/mymod/models/item/bismuth_boots.json
@@ -61,6 +61,7 @@ f81796b15b2e73ae183283b76a33aa4d35c835e1 assets/mymod/models/item/bloodwood_sapl
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/mymod/models/item/gecko_spawn_egg.json
 79a876cd70ec6a4c2805bcc0c8fa75c4db21f8fd assets/mymod/models/item/goji_berries.json
 b2e00a6ebd7012e7ae61e5e7670a96a84e6803f5 assets/mymod/models/item/i_dont_care_music_disc.json
+8650bacefa11cfb8487b4f2103b00e4953c2c6cb assets/mymod/models/item/kiwi.json
 555e5148954471d5ae81e8dcc41540c717ab9b83 assets/mymod/models/item/nanachi_armor_trim_smithing_template.json
 59d5c6b755a4f76b648965dea02cf2782ee9d09b assets/mymod/models/item/radish.json
 78d775a261e08a8ade178f6563a9b11ceac7bc53 assets/mymod/models/item/radish_seeds.json

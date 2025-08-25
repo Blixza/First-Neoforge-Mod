@@ -1,0 +1,9 @@
+{
+  "entries": [
+    "mymod:berry_from_creeper",
+    "mymod:chisel_from_jungle_temple",
+    "mymod:radish_seeds_to_tall_glass",
+    "mymod:radish_seeds_to_short_glass"
+  ],
+  "replace": false
+}

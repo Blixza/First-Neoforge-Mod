@@ -15,5 +15,7 @@
   "tooltip.mymod.chisel": "Hold shift",
   "tooltip.mymod.chisel.last_changed_block": "Last block changed at ",
   "trim_pattern.mymod.nanachi": "Nanachi Armor Trim",
-  "trim_material.mymod.bismuth": "Bismuth Material"
+  "trim_material.mymod.bismuth": "Bismuth Material",
+  "entity.mymod.pedestal.block_display": "Pedestal",
+  "block.mymod.growth_chamber": "Growth Chamber"
 }

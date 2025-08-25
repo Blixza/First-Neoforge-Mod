@@ -24,6 +24,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RAW_BISMUTH);
                         output.accept(ModItems.CHISEL);
                         output.accept(ModItems.RED_EYE);
+                        output.accept(ModItems.KIWI);
                         output.accept(ModItems.RADISH);
                         output.accept(ModItems.FROSTFIRE_ICE);
                         output.accept(ModItems.STARLIGHT_ASHES);
@@ -43,6 +44,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHERY_TIGGO_MUSIC_DISC);
                         output.accept(ModItems.RADISH_SEEDS);
                         output.accept(ModItems.GOJI_BERRIES);
+                        output.accept(ModItems.TOMAHAWK);
+                        output.accept(ModItems.RADIATION_STAFF);
                     }).build());
 
     public static final Supplier<CreativeModeTab> BISMUTH_BLOCKS_TAB = CREATIVE_MODE_TAB.register("bismuth_blocks_tab",
@@ -73,6 +76,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLOODWOOD_PLANKS.get());
                         output.accept(ModBlocks.BLOODWOOD_SAPLING.get());
                         output.accept(ModBlocks.BLOODWOOD_LEAVES.get());
+                        output.accept(ModBlocks.CHAIR.get());
+                        output.accept(ModBlocks.PEDESTAL.get());
+                        output.accept(ModBlocks.GROWTH_CHAMBER.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

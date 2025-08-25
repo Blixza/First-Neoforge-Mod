@@ -29,6 +29,9 @@ public class ModItems {
     public static final DeferredItem<Item> RED_EYE = ITEMS.register("red_eye",
             () -> new RedEyeItem(new Item.Properties()));
 
+    public static final DeferredItem<Item> KIWI = ITEMS.register("kiwi",
+            () -> new KiwiItem(new Item.Properties()));
+
     public static final DeferredItem<Item> RADISH = ITEMS.register("radish",
             () -> new Item(new Item.Properties().food(ModFoodProperties.RADISH)));
 
@@ -98,6 +101,12 @@ public class ModItems {
 
     public static final DeferredItem<Item> GECKO_SPAWN_EGG = ITEMS.register("gecko_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.GECKO, 0x31afaf, 0xffac00, new Item.Properties()));
+
+    public static final DeferredItem<Item> RADIATION_STAFF = ITEMS.register("radiation_staff",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> TOMAHAWK = ITEMS.register("tomahawk",
+            () -> new TomahawkItem(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

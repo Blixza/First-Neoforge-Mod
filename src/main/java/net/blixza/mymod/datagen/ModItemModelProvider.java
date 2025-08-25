@@ -48,6 +48,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.STARLIGHT_ASHES.get());
 //        basicItem(ModItems.CHISEL.get());
         basicItem(ModItems.RED_EYE.get());
+        basicItem(ModItems.KIWI.get());
         basicItem(ModItems.BISMUTH_HORSE_ARMOR.get());
         basicItem(ModItems.NANACHI_SMITHING_TEMPLATE.get());
         basicItem(ModItems.I_DONT_CARE_MUSIC_DISC.get());
