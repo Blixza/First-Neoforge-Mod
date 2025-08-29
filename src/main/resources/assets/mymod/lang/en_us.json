@@ -17,5 +17,6 @@
   "trim_pattern.mymod.nanachi": "Nanachi Armor Trim",
   "trim_material.mymod.bismuth": "Bismuth Material",
   "entity.mymod.pedestal.block_display": "Pedestal",
-  "block.mymod.growth_chamber": "Growth Chamber"
+  "block.mymod.growth_chamber": "Growth Chamber",
+  "enchantment.mymod.floral_path": "Floral Path"
 }

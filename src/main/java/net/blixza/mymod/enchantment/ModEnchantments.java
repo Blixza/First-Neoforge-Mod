@@ -3,31 +3,36 @@ package net.blixza.mymod.enchantment;
 import net.blixza.mymod.MyMod;
 import net.blixza.mymod.enchantment.custom.FloralPathEnchantmentEffect;
 import net.blixza.mymod.enchantment.custom.LightningStrikerEnchantmentEffect;
-import net.minecraft.advancements.critereon.DamageSourcePredicate;
-import net.minecraft.advancements.critereon.EntityFlagsPredicate;
-import net.minecraft.advancements.critereon.EntityPredicate;
-import net.minecraft.advancements.critereon.TagPredicate;
+import net.blixza.mymod.util.ModTags;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Vec3i;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlotGroup;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentTarget;
 import net.minecraft.world.item.enchantment.LevelBasedValue;
-import net.minecraft.world.item.enchantment.effects.DamageImmunity;
-import net.minecraft.world.item.enchantment.effects.EnchantmentAttributeEffect;
-import net.minecraft.world.level.storage.loot.predicates.DamageSourceCondition;
+import net.minecraft.world.item.enchantment.effects.ReplaceDisk;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+
+import java.util.Optional;
+import java.util.Random;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class ModEnchantments {
     public static final ResourceKey<Enchantment> LIGHTNING_STRIKER = ResourceKey.create(Registries.ENCHANTMENT,
@@ -59,15 +64,43 @@ public class ModEnchantments {
                 Enchantment.definition(
                         holdergetter2.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
                         2,
-                        1,
+                        3,
                         Enchantment.dynamicCost(10, 10),
                         Enchantment.dynamicCost(25, 10),
                         2,
                         EquipmentSlotGroup.FEET
                 ))
                 .exclusiveWith(holdergetter1.getOrThrow(EnchantmentTags.BOOTS_EXCLUSIVE))
-                .withEffect(EnchantmentEffectComponents.LOCATION_CHANGED, new FloralPathEnchantmentEffect())
+                .withEffect(EnchantmentEffectComponents.LOCATION_CHANGED,
+                        new FloralPathEnchantmentEffect(
+                            new LevelBasedValue.Clamped(LevelBasedValue.perLevel(1.0F, 1.0F), 0.0F, 5.0F),
+                            LevelBasedValue.constant(1.0F),
+                            new Vec3i(0, 0, 0),
+                            Optional.of(
+                                    BlockPredicate.allOf(
+                                            BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.GRASS_BLOCK),
+                                            BlockPredicate.matchesBlocks(Blocks.AIR)
+                                    )
+                            ),
+                            BlockStateProvider.simple(randomFlower()),
+                            Optional.of(GameEvent.BLOCK_PLACE)
+                ))
         );
+    }
+
+    private static Block randomFlower() {
+        Random random = new Random();
+        Set<Holder<Block>> blocksInTag = BuiltInRegistries.BLOCK.getOrCreateTag(BlockTags.FLOWERS).stream().collect(Collectors.toSet());
+
+        int i = 0;
+        for (Holder<Block> block : blocksInTag) {
+            if (random.nextInt(blocksInTag.size()) == i) {
+                return block.value();
+            }
+            i++;
+        }
+
+        return Blocks.POPPY;
     }
 
     private static void register(BootstrapContext<Enchantment> registry, ResourceKey<Enchantment> key,

@@ -1,9 +1,10 @@
-// 1.21	2025-08-21T21:47:31.5018232	Tags for minecraft:block mod id mymod
+// 1.21	2025-08-30T03:22:15.5971332	Tags for minecraft:block mod id mymod
 15db023e4e9998b1086f50efdc843c064834c2d3 data/minecraft/tags/block/fences.json
 a18c95498953996cac3cc91a7c734132f0efcde0 data/minecraft/tags/block/fence_gates.json
 d654d044d09303439212edd751f57614d7a974f3 data/minecraft/tags/block/logs_that_burn.json
 f5a22c0718684e3dbd5dc711485d8b0ffe74e768 data/minecraft/tags/block/mineable/pickaxe.json
 4c17c89183034a776af37fc3aa41715b3329cde8 data/minecraft/tags/block/needs_iron_tool.json
 e227e6516e2eb1d2bb597407499c3b3c504a1e51 data/minecraft/tags/block/walls.json
+a72c613d8786fc7756573ffec9c22f7ed2973d9e data/mymod/tags/block/flowers.json
 27b50c530685fda8761f399692a41b66254cfb44 data/mymod/tags/block/incorrect_for_bismuth_tool.json
 0e7b06530f9a840c24e9b7be83c3aa947e51da40 data/mymod/tags/block/needs_bismuth_tool.json
