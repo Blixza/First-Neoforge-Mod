@@ -9,6 +9,7 @@ import net.blixza.mymod.enchantment.ModEnchantmentEffects;
 import net.blixza.mymod.entity.ModEntities;
 import net.blixza.mymod.entity.client.ChairRenderer;
 import net.blixza.mymod.entity.client.GeckoRenderer;
+import net.blixza.mymod.entity.client.NeritantanRenderer;
 import net.blixza.mymod.entity.client.TomahawkProjectileRenderer;
 import net.blixza.mymod.item.ModCreativeModeTabs;
 import net.blixza.mymod.item.ModItems;
@@ -16,6 +17,7 @@ import net.blixza.mymod.loot.ModLootModifiers;
 import net.blixza.mymod.particle.BismuthParticles;
 import net.blixza.mymod.particle.ModParticles;
 import net.blixza.mymod.potion.ModPotions;
+import net.blixza.mymod.recipe.ModRecipes;
 import net.blixza.mymod.screen.ModMenuTypes;
 import net.blixza.mymod.screen.custom.GrowthChamberScreen;
 import net.blixza.mymod.screen.custom.PedestalScreen;
@@ -72,6 +74,7 @@ public class MyMod {
         ModLootModifiers.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -97,6 +100,7 @@ public class MyMod {
             ModItemProperties.addCustomItemProperties();
 
             EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
+            EntityRenderers.register(ModEntities.NERITANTAN.get(), NeritantanRenderer::new);
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
             EntityRenderers.register(ModEntities.CHAIR_ENTITY.get(), ChairRenderer::new);
         }

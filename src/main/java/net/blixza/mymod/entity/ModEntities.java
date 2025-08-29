@@ -3,6 +3,7 @@ package net.blixza.mymod.entity;
 import net.blixza.mymod.MyMod;
 import net.blixza.mymod.entity.custom.ChairEntity;
 import net.blixza.mymod.entity.custom.GeckoEntity;
+import net.blixza.mymod.entity.custom.NeritantanEntity;
 import net.blixza.mymod.entity.custom.TomahawkProjectileEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
@@ -19,6 +20,10 @@ public class ModEntities {
     public static final Supplier<EntityType<GeckoEntity>> GECKO =
             ENTITY_TYPES.register("gecko", () -> EntityType.Builder.of(GeckoEntity::new, MobCategory.CREATURE)
                     .sized(0.75f, 0.35f).build("gecko"));
+
+    public static final Supplier<EntityType<NeritantanEntity>> NERITANTAN =
+            ENTITY_TYPES.register("neritantan", () -> EntityType.Builder.of(NeritantanEntity::new, MobCategory.CREATURE)
+                    .sized(0.5f, 0.4f).build("neritantan"));
 
     public static final Supplier<EntityType<TomahawkProjectileEntity>> TOMAHAWK =
             ENTITY_TYPES.register("tomahawk", () -> EntityType.Builder.<TomahawkProjectileEntity>of(TomahawkProjectileEntity::new, MobCategory.MISC)

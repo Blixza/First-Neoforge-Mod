@@ -2,6 +2,7 @@ package net.blixza.mymod.enchantment;
 
 import com.mojang.serialization.MapCodec;
 import net.blixza.mymod.MyMod;
+import net.blixza.mymod.enchantment.custom.FloralPathEnchantmentEffect;
 import net.blixza.mymod.enchantment.custom.LightningStrikerEnchantmentEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
@@ -16,6 +17,9 @@ public class ModEnchantmentEffects {
 
     public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> LIGHTNING_STRIKER =
             ENTITY_ENCHANTMENT_EFFECTS.register("lightning_striker", () -> LightningStrikerEnchantmentEffect.CODEC);
+
+    public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> FLORAL_PATH =
+            ENTITY_ENCHANTMENT_EFFECTS.register("floral_path", () -> FloralPathEnchantmentEffect.CODEC);
 
     public static void register(IEventBus eventBus) {
         ENTITY_ENCHANTMENT_EFFECTS.register(eventBus);

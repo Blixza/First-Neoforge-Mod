@@ -7,19 +7,28 @@ import net.blixza.mymod.sound.ModSounds;
 import net.blixza.mymod.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -77,9 +86,34 @@ public class ModBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<DoorBlock> BISMUTH_DOOR = registerBlock("bismuth_door",
-            () -> new DoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().noOcclusion()));
+            () -> new DoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().noOcclusion()) {
+                @Override
+                protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+                    state = state.cycle(OPEN);
+                    level.setBlock(pos, state, 10);
+                    level.playSound(player, pos, SoundEvents.WOODEN_DOOR_OPEN, SoundSource.BLOCKS, 1f, 1f);
+                    level.gameEvent(player, this.isOpen(state) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
+                    return InteractionResult.sidedSuccess(level.isClientSide);
+                }
+            });
     public static final DeferredBlock<TrapDoorBlock> BISMUTH_TRAPDOOR = registerBlock("bismuth_trapdoor",
-            () -> new TrapDoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().noOcclusion()));
+            () -> new TrapDoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().noOcclusion()) {
+                @Override
+                protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+                    this.toggle(state, level, pos, player);
+                    return InteractionResult.sidedSuccess(level.isClientSide);
+                }
+
+                private void toggle(BlockState state, Level level, BlockPos pos, @Nullable Player player) {
+                    BlockState blockstate = state.cycle(OPEN);
+                    level.setBlock(pos, blockstate, 2);
+                    if (blockstate.getValue(WATERLOGGED)) {
+                        level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+                    }
+
+                    this.playSound(player, level, pos, blockstate.getValue(OPEN));
+                }
+            });
 
     public static final DeferredBlock<Block> BLOODWOOD_LOG = registerBlock("bloodwood_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));

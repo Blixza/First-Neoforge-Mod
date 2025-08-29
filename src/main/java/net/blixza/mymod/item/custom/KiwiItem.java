@@ -28,6 +28,8 @@ public class KiwiItem extends Item {
             level.addParticle(ModParticles.BISMUTH_PARTICLES.get(),
                     blockPos.getX(), blockPos.getY() + 2.0, blockPos.getZ(),
                     0.0, 0.0, 0.0);
+
+            player.setPos(blockPos.getX(), blockPos.getY() + 1, blockPos.getZ());
         }
 
 

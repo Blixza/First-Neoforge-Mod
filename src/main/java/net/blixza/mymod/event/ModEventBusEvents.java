@@ -3,8 +3,10 @@ package net.blixza.mymod.event;
 import net.blixza.mymod.MyMod;
 import net.blixza.mymod.entity.ModEntities;
 import net.blixza.mymod.entity.client.GeckoModel;
+import net.blixza.mymod.entity.client.NeritantanModel;
 import net.blixza.mymod.entity.client.TomahawkProjectileModel;
 import net.blixza.mymod.entity.custom.GeckoEntity;
+import net.blixza.mymod.entity.custom.NeritantanEntity;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -19,12 +21,14 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(GeckoModel.LAYER_LOCATION, GeckoModel::createBodyLayer);
+        event.registerLayerDefinition(NeritantanModel.LAYER_LOCATION, NeritantanModel::createBodyLayer);
         event.registerLayerDefinition(TomahawkProjectileModel.LAYER_LOCATION, TomahawkProjectileModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.GECKO.get(), GeckoEntity.createAttributes().build());
+        event.put(ModEntities.NERITANTAN.get(), NeritantanEntity.createAttributes().build());
     }
 
     @SubscribeEvent
