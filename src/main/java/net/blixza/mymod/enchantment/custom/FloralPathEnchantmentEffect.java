@@ -33,16 +33,16 @@ public record FloralPathEnchantmentEffect(
     BlockStateProvider blockState,
     Optional<Holder<GameEvent>> triggerGameEvent
 ) implements EnchantmentEntityEffect {
-    public static final MapCodec<ReplaceDisk> CODEC = RecordCodecBuilder.mapCodec(
+    public static final MapCodec<FloralPathEnchantmentEffect> CODEC = RecordCodecBuilder.mapCodec(
             group -> group.group(
-                            LevelBasedValue.CODEC.fieldOf("radius").forGetter(ReplaceDisk::radius),
-                            LevelBasedValue.CODEC.fieldOf("height").forGetter(ReplaceDisk::height),
-                            Vec3i.CODEC.optionalFieldOf("offset", Vec3i.ZERO).forGetter(ReplaceDisk::offset),
-                            BlockPredicate.CODEC.optionalFieldOf("predicate").forGetter(ReplaceDisk::predicate),
-                            BlockStateProvider.CODEC.fieldOf("block_state").forGetter(ReplaceDisk::blockState),
-                            GameEvent.CODEC.optionalFieldOf("trigger_game_event").forGetter(ReplaceDisk::triggerGameEvent)
+                            LevelBasedValue.CODEC.fieldOf("radius").forGetter(FloralPathEnchantmentEffect::radius),
+                            LevelBasedValue.CODEC.fieldOf("height").forGetter(FloralPathEnchantmentEffect::height),
+                            Vec3i.CODEC.optionalFieldOf("offset", Vec3i.ZERO).forGetter(FloralPathEnchantmentEffect::offset),
+                            BlockPredicate.CODEC.optionalFieldOf("predicate").forGetter(FloralPathEnchantmentEffect::predicate),
+                            BlockStateProvider.CODEC.fieldOf("block_state").forGetter(FloralPathEnchantmentEffect::blockState),
+                            GameEvent.CODEC.optionalFieldOf("trigger_game_event").forGetter(FloralPathEnchantmentEffect::triggerGameEvent)
                     )
-                    .apply(group, ReplaceDisk::new)
+                    .apply(group, FloralPathEnchantmentEffect::new)
     );
 
     @Override
@@ -62,7 +62,7 @@ public record FloralPathEnchantmentEffect(
     }
 
     @Override
-    public MapCodec<ReplaceDisk> codec() {
+    public MapCodec<FloralPathEnchantmentEffect> codec() {
         return CODEC;
     }
 }

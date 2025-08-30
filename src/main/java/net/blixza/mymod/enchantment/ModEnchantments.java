@@ -15,6 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -24,9 +25,11 @@ import net.minecraft.world.item.enchantment.LevelBasedValue;
 import net.minecraft.world.item.enchantment.effects.ReplaceDisk;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 
 import java.util.Optional;
 import java.util.Random;
@@ -82,12 +85,11 @@ public class ModEnchantments {
                                             BlockPredicate.matchesBlocks(Blocks.AIR)
                                     )
                             ),
-                            BlockStateProvider.simple(randomFlower()),
+                            new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.POPPY.defaultBlockState()).add(Blocks.ALLIUM.defaultBlockState()).build()),
                             Optional.of(GameEvent.BLOCK_PLACE)
                 ))
         );
     }
-
     private static Block randomFlower() {
         Random random = new Random();
         Set<Holder<Block>> blocksInTag = BuiltInRegistries.BLOCK.getOrCreateTag(BlockTags.FLOWERS).stream().collect(Collectors.toSet());
@@ -102,6 +104,7 @@ public class ModEnchantments {
 
         return Blocks.POPPY;
     }
+
 
     private static void register(BootstrapContext<Enchantment> registry, ResourceKey<Enchantment> key,
                                  Enchantment.Builder builer) {
